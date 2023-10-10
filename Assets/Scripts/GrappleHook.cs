@@ -31,7 +31,8 @@ public bool isGrappling;
         if(isGrappling == true)
         {
          
-            if(Input.GetKeyDown(KeyCode.Mouse0)){
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
          
            Vector2 mousepos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
            
@@ -45,7 +46,7 @@ public bool isGrappling;
             linePosition.position = mousepos;
              
                
-            }
+        }
         if(Input.GetKey(KeyCode.Mouse0))
         {
            
@@ -56,7 +57,8 @@ public bool isGrappling;
            
              _lineRenderer.enabled = true;
                
-        }else if ( Input.GetKeyUp(KeyCode.Mouse0))
+        }
+        else if ( Input.GetKeyUp(KeyCode.Mouse0))
         {
             _distanceJoint.enabled = false;
          
@@ -75,12 +77,25 @@ public bool isGrappling;
              _distanceJoint.enabled = false;
         }
          
-           if(Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
+            if(Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
+            {
+             _distanceJoint.enabled = true;
+             
+            }
+        }  
+        if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
+        {      
+             
+            Vector3 Direction = linePosition.position - transform.position;
+           
+            rb.velocity = new Vector2(Direction.x * force, Direction.y * force * -1).normalized * force * Time.deltaTime;
+             _distanceJoint.enabled = false;
+        }
+         
+           if(Input.GetKeyUp(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
            {
              _distanceJoint.enabled = true;
              
            }
-        }  
-       
-    }
-}
+        }
+        }
