@@ -33,68 +33,54 @@ public bool isGrappling;
          
             if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-         
            Vector2 mousepos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
-           
-
-
             _lineRenderer.SetPosition(0,mousepos);
-       
             _lineRenderer.SetPosition(1,transform.position);
             _distanceJoint.connectedAnchor = mousepos;
             _distanceJoint.enabled = true;
-            linePosition.position = mousepos;
-             
-               
+            linePosition.position = mousepos;     
         }
+
         if(Input.GetKey(KeyCode.Mouse0))
         {
-           
-           
-           
             _lineRenderer.SetPosition(1,transform.position);
-           
-           
-             _lineRenderer.enabled = true;
-               
+            _lineRenderer.enabled = true;
         }
+
         else if ( Input.GetKeyUp(KeyCode.Mouse0))
         {
             _distanceJoint.enabled = false;
-         
             _lineRenderer.enabled = false;
         }
+
         if(_distanceJoint.enabled)
         {
             _lineRenderer.SetPosition(1,transform.position);
         }
+
         if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
         {      
-             
             Vector3 Direction = linePosition.position - transform.position;
-           
             rb.velocity = new Vector2(Direction.x * force, Direction.y * force).normalized * force * Time.deltaTime;
-             _distanceJoint.enabled = false;
+            _distanceJoint.enabled = false;
         }
          
             if(Input.GetKeyUp(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
             {
-             _distanceJoint.enabled = true;
-             
+            _distanceJoint.enabled = true;
             }
-        }  
+        }
+
         if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
-        {      
-             
+        {        
             Vector3 Direction = linePosition.position - transform.position;
-           
             rb.velocity = new Vector2(Direction.x * force, Direction.y * force * -1).normalized * force * Time.deltaTime;
-             _distanceJoint.enabled = false;
+            _distanceJoint.enabled = false;
         }
          
            if(Input.GetKeyUp(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
            {
-             _distanceJoint.enabled = true;
+            _distanceJoint.enabled = true;
              
            }
         }
