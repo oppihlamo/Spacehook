@@ -30,7 +30,7 @@ public bool isGrappling;
        
         if(isGrappling == true)
         {
-         
+            // creates a vector between player and mouse position
             if(Input.GetKeyDown(KeyCode.Mouse0))
         {
            Vector2 mousepos = (Vector2)mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -40,13 +40,13 @@ public bool isGrappling;
             _distanceJoint.enabled = true;
             linePosition.position = mousepos;     
         }
-
+        // if mouse held, draws a line between mousepos and player
         if(Input.GetKey(KeyCode.Mouse0))
         {
             _lineRenderer.SetPosition(1,transform.position);
             _lineRenderer.enabled = true;
         }
-
+        // else removes the line and disables joints
         else if ( Input.GetKeyUp(KeyCode.Mouse0))
         {
             _distanceJoint.enabled = false;
@@ -57,7 +57,7 @@ public bool isGrappling;
         {
             _lineRenderer.SetPosition(1,transform.position);
         }
-
+        // shortens lenght of rope when mouse held and W pressed
         if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
         {      
             Vector3 Direction = linePosition.position - transform.position;
@@ -70,7 +70,7 @@ public bool isGrappling;
             _distanceJoint.enabled = true;
             }
         }
-
+        // increases lenght of rope when mouse held and S pressed
         if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
         {        
             Vector3 Direction = linePosition.position - transform.position;
