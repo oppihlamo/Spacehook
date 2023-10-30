@@ -57,7 +57,7 @@ public bool isGrappling;
         {
             _lineRenderer.SetPosition(1,transform.position);
         }
-        // shortens lenght of rope when mouse held and W pressed
+        // shortens length of rope when mouse held and W pressed
         if(Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Mouse0))
         {      
             Vector3 Direction = linePosition.position - transform.position;
@@ -70,7 +70,7 @@ public bool isGrappling;
             _distanceJoint.enabled = true;
             }
         }
-        // increases lenght of rope when mouse held and S pressed
+        // increases length of rope when mouse held and S pressed
         if(Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0))
         {        
             Vector3 Direction = linePosition.position - transform.position;
