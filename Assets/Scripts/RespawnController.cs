@@ -6,20 +6,27 @@ using UnityEngine;
 public class RespawnController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
-    private Vector2 respawnPoint;
-    private void Awake()
+    public Vector2 respawnPoint;
+
+    void Awake()
     {
         playerRb = GetComponent<Rigidbody2D>();
     }
-    private void Start()
+    void Start()
     {
         // spawn location created from starting position
         respawnPoint = transform.position;
     }
 
-    void Update()
-    {//create checkpoints
-    
+    //checks if player hits a checkpoint and reassigns respawn location
+    void OnTriggerEnter2D(Collider2D door)
+    {
+        if (door.tag == "Checkpoint")
+        {   
+            respawnPoint = new Vector2(83.88f, -3f);
+        }
+
+        //checkpoint2
     }
     void FixedUpdate()
     {
