@@ -12,15 +12,19 @@ public class ScoreDisplay : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        scoreText.enabled = false;
     }
-    void Start()
+    void Update()
     {
-        scoreText.text = "Score: " + score.ToString();
+        if (score > 0)
+        {
+            scoreText.enabled = true;
+        }
     }
 
     public void Pickup()
     {
         score += 1;
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Crystals collected: " + score.ToString();
     }
 }
