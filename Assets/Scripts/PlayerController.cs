@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
         {
             respawnAvailable = true;
         }
+        // exit button
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
         // player sprite flip based on input direction
         input = Input.GetAxisRaw("Horizontal");

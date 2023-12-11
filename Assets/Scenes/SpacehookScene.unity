@@ -2407,7 +2407,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 4
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2436,7 +2436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.34, y: -0.26, z: -10}
+  m_LocalPosition: {x: -0.5, y: -0.31, z: -10}
   m_LocalScale: {x: 1, y: 1.0625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9055,7 +9055,7 @@ MonoBehaviour:
   _lineRenderer: {fileID: 1946457138}
   _distanceJoint: {fileID: 1946457137}
   rb: {fileID: 1946457132}
-  force: 3000
+  force: 800
   linePosition: {fileID: 442122376}
   isGrappling: 0
 --- !u!232 &1946457137
