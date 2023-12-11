@@ -52,5 +52,6 @@
         "Temp/": true
     },
     "dotnet.defaultSolution": "Spacehook.sln",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "FSharp.suggestGitignore": false
 }

@@ -11,8 +11,8 @@ public class CameraController : MonoBehaviour
     {
         // creates a maximum edgeposition for camera to move in, containing it within game area
         transform.position = new Vector3(
-            Mathf.Clamp(followTarget.position.x, -1.48f, 50.28f),
-            Mathf.Clamp(followTarget.position.y, -1.56f, 0.76f),
+            Mathf.Clamp(followTarget.position.x, 2.88f, 185.5f),
+            Mathf.Clamp(followTarget.position.y, -1.56f, 0.85f),
             transform.position.z);
         
     }
