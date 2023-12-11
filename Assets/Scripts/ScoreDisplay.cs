@@ -14,6 +14,7 @@ public class ScoreDisplay : MonoBehaviour
         instance = this;
         scoreText.enabled = false;
     }
+    //keep score text hidden until its needed
     void Update()
     {
         if (score > 0)

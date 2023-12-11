@@ -15,7 +15,7 @@ void Awake()
 {
     tutorialPassed.enabled = false;
 }
-
+// when player hits level end door, hide crystal counter, show end text, restart scene after 5 seconds
 void OnTriggerEnter2D(Collider2D endPortal)
 {
     PlayerController player = endPortal.GetComponent<PlayerController>();
