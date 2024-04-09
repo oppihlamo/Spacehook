@@ -19,7 +19,7 @@ void Awake()
     GetComponent<Animator>();
 }
 void OnTriggerEnter2D(Collider2D checkpoint)
-{
+{   //when player picks up checkpoint on level for the first time, show text animation, then hide text
     PlayerController player = checkpoint.GetComponent<PlayerController>();
     if (player!= null && (checkpointTaken == false))
     {   

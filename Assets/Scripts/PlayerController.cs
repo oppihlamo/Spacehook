@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (respawnAvailable)
-        {
+        {   // respawn on keypress, with spamfilter
             if (Input.GetKeyDown(KeyCode.R))
             {
                 RespawnController.instance2.RespawnToCheckpoint();
@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.R))
         {
             respawnAvailable = true;
+        }
+        // exit button
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
         }
 
         // player sprite flip based on input direction
@@ -79,7 +84,7 @@ public class PlayerController : MonoBehaviour
             UpdateAnimation();
     }
         void UpdateAnimation()
-        {
+        {   // booleans for toggling walking animation
             if (isGrounded && (input != 0))
             {
                 walk.SetBool("isWalking", true);
@@ -91,7 +96,7 @@ public class PlayerController : MonoBehaviour
         }
 
     void OnTriggerEnter2D(Collider2D end)
-    {
+    {   //when player hits level end door, turn off player controls
         PlayerController player = end.GetComponent<PlayerController>();
         if (player != null)
         {

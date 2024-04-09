@@ -23,7 +23,7 @@ public class RespawnController : MonoBehaviour
         // spawn location created from starting position
         respawnPoint = transform.position;
     }
-
+    //respawn counter text
     void UpdateRespawns()
     {
         if (respawnCount > 0)

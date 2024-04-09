@@ -12,7 +12,7 @@ public class CrystalPickup : MonoBehaviour
     {
 
     }
-
+    // pickup crystal, destroy it, add to counter
     void OnTriggerEnter2D(Collider2D collider)
     {
         PlayerController player = collider.GetComponent<PlayerController>();
